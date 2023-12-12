@@ -13,7 +13,7 @@ molecule_name="$1"
 i="$2"
 
 if [ ! -d "charmm36-jul2021.ff" ]; then
-        ln -s ../charmm36-jul2021.ff ./
+        ln -s ~/charmm36-jul2021.ff ./
 fi
 gmx editconf -f "${molecule_name}_${i}_ini.pdb" -o "${molecule_name}_${i}.gro"
 sed -i "s/ZN    ZN/ZN   ZN2/g" binary_$i.pdb
